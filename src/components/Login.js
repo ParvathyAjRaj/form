@@ -1,7 +1,9 @@
 import React, { useState,useRef } from "react";
 import './Login.css';
 
-const login_form = []
+let login_form = {"username":'',
+                    "password":'',
+                    "validation":false};
 
 function Login(){
     const inputUser = useRef();
@@ -23,16 +25,19 @@ function Login(){
     function handleAdd(){
         if (username !== null && username.length >= 4){
             setAlertUsername(false);
-            login_form.push(username);
+            login_form["username"] = username;
         }else{
             setAlertUsername(true);
         }
         if(password !== null && password.length >=8 && password.length <=25){
             setAlertPassword(false);
-            login_form.push(password);
+            login_form["password"] = password;
         }
         else{
             setAlertPassword(true);
+        }
+        if(alertUsername === false && alertPassword === false){
+            login_form["validation"] = true;
         }
     }
 
@@ -40,7 +45,7 @@ function Login(){
         <div className="login">
             <div className="user">
                 <label>Username</label>
-                <input type="text" ref={inputUser} onChange={handleUser} className="inputbox"></input>
+                <input type="text"  ref={inputUser} onChange={handleUser} className="inputbox"></input>
             </div>
             <div className="alert">
                     {alertUsername === true ? <alert>Your username should be atleast 4 letters</alert> : null}
