@@ -1,0 +1,23 @@
+.login{
+    margin-top: 5%;
+    height: auto;
+    /* border: 1px solid blue; */
+    background-color: #F0FFFF;
+    margin-bottom: 5%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 100%;
+}
+
+
+.user{
+    padding-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 5%;
+}
+
+.pwd{
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 5%;
+}
