@@ -13,7 +13,12 @@
     padding-top: 5%;
     display: flex;
     justify-content: space-evenly;
+    padding-bottom: 2%;
+}
+
+.alert{
     padding-bottom: 5%;
+    color: red !important;
 }
 
 .pwd{
