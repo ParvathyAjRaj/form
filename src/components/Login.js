@@ -1,6 +1,5 @@
 import React, { useState,useRef } from "react";
 import './Login.css';
-import Result from "./Results";
 
 const login_form = []
 
