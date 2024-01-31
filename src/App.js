@@ -37,7 +37,6 @@ function App() {
   }
 
   return (
-    
     <div className='App'>
       {completed === false ? 
         <Container className='h-100'>
