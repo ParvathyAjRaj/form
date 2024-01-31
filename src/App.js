@@ -29,6 +29,14 @@ function App() {
         setIsNext(false);
       } 
     }else if(index === 2){
+      if(address_details["validation"] === true){
+        setIsNext(true);
+        const prevIndex = index;
+        setIndex(prevIndex + 1);
+      }else{
+        setIsNext(false);
+      }
+    }else if(index === 3){
       const prevIndex = index;
         setIndex(prevIndex + 1);
     }
@@ -39,17 +47,19 @@ function App() {
     if (index === 1){
       return(<Login/>)
     }else if(index === 2){
-      console.log(address_details.address);
       return(<Address/>)
     }
-    if(index === 4){
+    if(index === 3){
       return(<Result 
-        user ="Parvathy"/>);
+        user ={login_form["username"]}
+        address = {address_details["address"]}
+        city={address_details["city"]}
+        state={address_details["state"]}
+        zipcode={address_details["zipcode"]}/>);
     }
   }
 
   function handleSubmit(){
-    console.log("entered handle submit");
     setCompleted(true);
   }
 
@@ -57,6 +67,9 @@ function App() {
     <div className='App'>
       {completed === false ? 
         <Container className='h-100'>
+          <Row className='mt-5 heading'>
+            <h1>Sign-up page for the Postal.com membership</h1>
+          </Row>
         <Row>
           <Col className='mt-5'>
             <StepProgressBar step={index}/>
@@ -65,22 +78,22 @@ function App() {
         <Row>
           <Check/>
         </Row>
+        <Row>
+        <div className="validation_alert">
+            {isnext === false ? <h1>Please add all the details</h1> : ''}
+        </div>
+        </Row>
         <Row className='mb-10'>
           <Col>
             <Button disabled={index === 1} onClick={handlePrev}>Previous</Button>
           </Col>
           <Col>
-           <Button disabled={index === 4} onClick={handleNext}>Next</Button>
+           <Button disabled={index === 3} onClick={handleNext}>Next</Button>
           </Col>
         </Row>
-        <Row>
-        <div className="validation_alert">
-            {isnext === false ? <alert>Please add username and password </alert> : ''}
-        </div>
-        </Row>
-        <Row>
+        <Row className='mb-10'>
           <Col>
-            <Button disabled={index < 4} onClick={handleSubmit}>Submit</Button>
+            <Button disabled={index < 3} onClick={handleSubmit}>Submit</Button>
           </Col>
         </Row>
       </Container>

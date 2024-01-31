@@ -1,6 +1,18 @@
 .success{
-    margin-top: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+@media (max-width:800px){
+    .success{
+        margin-top: 50%;
+    }
+}
+
+@media (min-width:800px){
+    .success{
+        margin-top: 20%;
+    }
+}
+

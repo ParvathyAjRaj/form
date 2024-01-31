@@ -13,10 +13,9 @@ function Login(){
     const [password,setPassword] = useState(null);
     const [alertPassword,setAlertPassword] = useState(false);
 
-    function handleUser(){
+    function handleUser(event){
         setUsername(inputUser.current.value);
     }
-    
 
     function handlePwd(){
         setPassword(inputPwd.current.value);
@@ -42,16 +41,16 @@ function Login(){
     }
 
     return(
-        <div className="login">
+        <div className="login container">
             <div className="user">
-                <label>Username</label>
+                <label>Username <span className="compulsory">*</span></label>
                 <input type="text"  ref={inputUser} onChange={handleUser} className="inputbox" defaultValue={login_form["username"]}></input>
             </div>
             <div className="alert">
                     {alertUsername === true ? <alert>Your username should be atleast 4 letters</alert> : null}
             </div>
             <div className="pwd">
-                <label className="label">Password</label>
+                <label className="label">Password <span className="compulsory">*</span></label>
                 <input type="password" ref={inputPwd} onChange={handlePwd} className="inputbox" defaultValue={login_form["password"]}></input>  
             </div>
             <div className="alert">

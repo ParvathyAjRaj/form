@@ -6,9 +6,10 @@ import './StepProgressBar.css';
 function StepProgressBar(props){
     return (
       <ProgressBar
-        percent={props.step === 4 ? 100 : (props.step - 1) * (100/3) }
+        percent={props.step === 3 ? 100 : (props.step - 1) * (100/2) }
         // filledBackground="linear-gradient(to right, #fefb72, #f0bb31)";
         filledBackground="linear-gradient(to right, #00FFFF, #89CFF0, #0096FF)"
+        className="bar"
       >
         <Step transition="scale">
           {({ accomplished }) => (
@@ -28,13 +29,6 @@ function StepProgressBar(props){
           {({ accomplished }) => (
             <div className={`step ${accomplished ? "completed" : ""}`}>
                 3
-            </div>
-          )}
-        </Step>
-        <Step transition="scale">
-          {({ accomplished }) => (
-            <div className={`step ${accomplished} ? "completed" : ""`}>
-                4
             </div>
           )}
         </Step>

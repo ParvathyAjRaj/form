@@ -1,0 +1,60 @@
+.address{
+    margin-top: 5%;
+    height: auto;
+    background-color: #F0FFFF;
+    margin-bottom: 5%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 100%;
+    font-weight: 900;
+}
+@media (max-width:800px) {
+    .user_address{
+        padding-top: 20%;
+        padding-bottom: 5%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+@media (min-width:800px){
+    .user_address{
+        padding-top: 10%;
+        display: flex;
+        justify-content: space-evenly;
+        padding-bottom: 5%;
+    }
+}
+
+.city,.state,.zip{
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 5%;
+}
+
+.city{
+    padding-left: 3%;
+}
+
+.state{
+    padding-left: 2%;
+}
+
+.alert{
+    padding-bottom: 5%;
+    color: red !important;
+}
+
+.compulsory{
+    color: red 
+}
+
+.inputbox{
+    border: 2px solid black;
+    border-radius: 2%;
+}
+
+.addbutton{
+    background-color: #CCCCFF;
+    border-radius: 20%;
+    font-weight: 900;
+}

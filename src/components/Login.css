@@ -1,7 +1,7 @@
 .login{
     margin-top: 5%;
+    margin:5%;
     height: auto;
-    /* border: 1px solid blue; */
     background-color: #F0FFFF;
     margin-bottom: 5%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -45,4 +45,8 @@
     background-color: #CCCCFF;
     border-radius: 20%;
     font-weight: 900;
+}
+
+.compulsory{
+    color: red 
 }

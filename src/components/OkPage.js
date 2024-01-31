@@ -4,8 +4,7 @@ import "./OkPage.css";
 function Ok(){
     return(
         <div className="success">
-            <h1>Succesfully Signed-Up</h1>
-            <h1>✅</h1>
+            <h1>Succesfully created account for Postal.com ✅</h1>
         </div>
     )
 }

@@ -4,5 +4,10 @@
 }
 
 .validation_alert{
+  color: red !important;
   margin-bottom: 2%;
+}
+
+.heading{
+  color:#000080;
 }
