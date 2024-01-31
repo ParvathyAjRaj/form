@@ -45,14 +45,14 @@ function Login(){
         <div className="login">
             <div className="user">
                 <label>Username</label>
-                <input type="text"  ref={inputUser} onChange={handleUser} className="inputbox"></input>
+                <input type="text"  ref={inputUser} onChange={handleUser} className="inputbox" defaultValue={login_form["username"]}></input>
             </div>
             <div className="alert">
                     {alertUsername === true ? <alert>Your username should be atleast 4 letters</alert> : null}
             </div>
             <div className="pwd">
                 <label className="label">Password</label>
-                <input type="password" ref={inputPwd} onChange={handlePwd} className="inputbox"></input>  
+                <input type="password" ref={inputPwd} onChange={handlePwd} className="inputbox" defaultValue={login_form["password"]}></input>  
             </div>
             <div className="alert">
                     {alertPassword === true ? <alert>Your password should be atleast 8 letters length [maximum of 25 letters length]</alert> : null}
