@@ -1,42 +1,70 @@
-.address{
-    margin-top: 5%;
-    height: auto;
-    background-color: #F0FFFF;
-    margin-bottom: 5%;
+/* 
+.containerAddress{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+#address{
+    margin-top: 5% !important;
+    background-color: #3B444B;
+    border: 2px solid #A9A9A9;
+    margin-bottom: 3%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 100%;
     font-weight: 900;
-}
-@media (max-width:800px) {
-    .user_address{
-        padding-top: 20%;
-        padding-bottom: 5%;
-        display: flex;
-        justify-content: space-evenly;
-    }
+    width: 100%;
+    max-width: 40rem;
+    text-align: start;
+    padding: 3%;
+    border-radius: 0.5rem;
+    color: white;
 }
 
-@media (min-width:800px){
+@media (max-width:600px) {
+    #address{
+        width: 80%;
+        max-width: 40rem;
+    }
     .user_address{
-        padding-top: 10%;
-        display: flex;
-        justify-content: space-evenly;
         padding-bottom: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+}
+
+@media (min-width:600px){
+    #address{        
+        width: 80%;
+        max-width: 28rem;
+    }
+    .user_address{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-bottom: 8%;
+        padding-top: 2%;
     }
 }
 
 .city,.state,.zip{
     display: flex;
     justify-content: space-evenly;
-    padding-bottom: 5%;
+    flex-direction: column;
 }
 
 .city{
-    padding-left: 3%;
+    padding-bottom: 8%;
 }
 
 .state{
-    padding-left: 2%;
+    padding-bottom: 8%;
+}
+
+.zip{
+    padding-bottom: 2%;
 }
 
 .alert{
@@ -49,12 +77,21 @@
 }
 
 .inputbox{
-    border: 2px solid black;
-    border-radius: 2%;
+    border: 2px solid gray;
+    border-radius: 0.5rem;
 }
 
 .addbutton{
-    background-color: #CCCCFF;
-    border-radius: 20%;
-    font-weight: 900;
+    background-color: #3B444B;
+    border-radius: 0.3rem;
+    color: white;
+    border: 2px solid #A9A9A9;
+    padding: 1%;
+    font-size: 100%;
+    font-weight: 700;
+}
+
+#addressInput{
+    text-align: start;
+    height: 6rem;
 }

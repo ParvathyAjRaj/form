@@ -9,5 +9,28 @@
 }
 
 .heading{
-  color:#000080;
+  text-align: center;
+  color:#3B444B;
+}
+
+.actionButton{
+  background-color: #3B444B !important;
+  border: #A9A9A9;
+}
+
+@media (min-width:600px){
+  .progressBar{
+    width:auto;
+    margin-left: 1rem;
+  }
+}
+
+
+@media (max-width:600px){
+  /* html{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10rem;
+  } */
 }

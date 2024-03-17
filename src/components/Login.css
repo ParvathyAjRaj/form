@@ -1,26 +1,53 @@
-.login{
+#login{
     margin-top: 5%;
-    margin:5%;
-    height: auto;
-    background-color: #F0FFFF;
+    background-color: #3B444B;
+    border: 2px solid #A9A9A9;
     margin-bottom: 5%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 100%;
     font-weight: 900;
+    text-align: start;
+    padding-bottom: 3%;
+    border-radius: 0.5rem;
 }
 
-@media (max-width:800px) {
-    .user{
-        padding-top: 20%;
+/* css for mobile view */
+@media (max-width:600px) {
+    #login{
+        width: 80%;
+        max-width: 40rem;
+        margin-left: 2rem;
+    }
+    .user,.pwd{
+        padding: 2%;
+        display: flex;
+        flex-direction: column;
+        margin: 1%;
+    }
+    .label{
+        display: block;
+        margin-right: 2%;
+        color: white;
     }
 }
 
-@media (min-width:800px){
-    .user{
-        padding-top: 10%;
+/* css for desktop view */
+@media (min-width:600px){
+    #login{
+        width: 80%;
+        max-width: 28rem;
+       
+    }
+    .user,.pwd{
+        padding: 1%;
         display: flex;
-        justify-content: space-evenly;
-        padding-bottom: 2%;
+        flex-direction: column;
+        margin-bottom: 2%;
+    }
+    .label{
+        display: block;
+        margin-right: 2%;
+        color: white;
     }
 }
 
@@ -28,23 +55,6 @@
 .alert{
     padding-bottom: 5%;
     color: red !important;
-}
-
-.pwd{
-    display: flex;
-    justify-content: space-evenly;
-    padding-bottom: 5%;
-}
-
-.inputbox{
-    border: 2px solid black;
-    border-radius: 2%;
-}
-
-.addbutton{
-    background-color: #CCCCFF;
-    border-radius: 20%;
-    font-weight: 900;
 }
 
 .compulsory{

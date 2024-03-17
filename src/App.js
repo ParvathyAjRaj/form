@@ -43,9 +43,9 @@ function App() {
       
   }
 
-  function Check(){
+  function Check({mainAlert}){
     if (index === 1){
-      return(<Login/>)
+      return(<Login mainAlert = {mainAlert}/>)
     }else if(index === 2){
       return(<Address/>)
     }
@@ -68,34 +68,36 @@ function App() {
       {completed === false ? 
         <Container className='h-100'>
           <Row className='mt-5 heading'>
-            <h1>Sign-up page for the Postal.com membership</h1>
+            <h1>Sign Up Page</h1>
           </Row>
-        <Row>
-          <Col className='mt-5'>
-            <StepProgressBar step={index}/>
-          </Col>
-        </Row>
-        <Row>
-          <Check/>
-        </Row>
-        <Row>
-        <div className="validation_alert">
-            {isnext === false ? <h1>Please add all the details</h1> : ''}
-        </div>
-        </Row>
-        <Row className='mb-10'>
-          <Col>
-            <Button disabled={index === 1} onClick={handlePrev}>Previous</Button>
-          </Col>
-          <Col>
-           <Button disabled={index === 3} onClick={handleNext}>Next</Button>
-          </Col>
-        </Row>
-        <Row className='mb-10'>
-          <Col>
-            <Button disabled={index < 3} onClick={handleSubmit}>Submit</Button>
-          </Col>
-        </Row>
+          <div className='progressBar'>
+            <Row className='mx-5'>
+              <Col className='mt-5'>
+                <StepProgressBar step={index}/>
+              </Col>
+            </Row>
+          </div>
+          <Row>
+            <Check mainAlert = {setIsNext}/>
+          </Row>
+          <Row>
+          <div className="validation_alert">
+              {isnext === false ? <h1>Please add all the details</h1> : ''}
+          </div>
+          </Row>
+          <Row className='mb-10'>
+            <Col>
+              <Button disabled={index === 1} onClick={handlePrev} className='actionButton'>Previous</Button>
+            </Col>
+            <Col>
+            <Button disabled={index === 3} onClick={handleNext} className='actionButton'>Next</Button>
+            </Col>
+          </Row>
+          <Row className='mb-10'>
+            <Col>
+              <Button disabled={index < 3} onClick={handleSubmit} className='actionButton'>Submit</Button>
+            </Col>
+          </Row>
       </Container>
       : 
       <div><OkPage/></div>

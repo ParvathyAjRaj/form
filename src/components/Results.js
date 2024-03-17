@@ -3,7 +3,7 @@ import "./Result.css"
 
 function Result(props){
     return(
-        <div className="results">
+        <div className="container" id="results">
             <h4>Please check the entries</h4>
             <div className="details">
                 <p>Username 👤: {props.user}</p>

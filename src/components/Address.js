@@ -63,30 +63,33 @@ function Address(){
     }
 
     return(
-        <div className="address">
-            <div className="user_address">
-                <label>Address <span className="compulsory">*</span></label>
-                <input className="inputbox" name="address_name" ref={ref_address} onChange={handleChange} defaultValue={address_details["address"]}></input>
-            </div>
-            <div className="city">
-                <label>City <span className="compulsory">*</span></label>
-                <input className="inputbox" name="city_name" ref={ref_city} onChange={handleChange} defaultValue={address_details["city"]}></input>
-            </div>
-            <div className="state">
-                <label>State <span className="compulsory">*</span></label>
-                <input className="inputbox" name="state_name" ref={ref_state} onChange={handleChange} defaultValue={address_details["state"]}></input>
-            </div>
-            <div className="zip">
-                <label>Zipcode <span className="compulsory">*</span></label>
-                <input className="inputbox" name="zipcode_name" ref={ref_zipcode} onChange={handleChange} defaultValue={address_details["zipcode"]}></input>
-            </div>
-            <div className="alert">
-                {isZipCodeInvalid === true ? <h2>Your zipcode should be 6 digit number only</h2> : null}
+        <div className="containerAddress">
+            <div className="container" id="address">
+                <div className="user_address">
+                    <label>Address <span className="compulsory">*</span></label>
+                    <textarea className="inputbox" id="addressInput" name="address_name" ref={ref_address} onChange={handleChange} defaultValue={address_details["address"]}></textarea>
+                </div>
+                <div className="city">
+                    <label>City <span className="compulsory">*</span></label>
+                    <input type="text" className="inputbox" name="city_name" ref={ref_city} onChange={handleChange} defaultValue={address_details["city"]}></input>
+                </div>
+                <div className="state">
+                    <label>State <span className="compulsory">*</span></label>
+                    <input type="text" className="inputbox" name="state_name" ref={ref_state} onChange={handleChange} defaultValue={address_details["state"]}></input>
+                </div>
+                <div className="zip">
+                    <label>Zipcode <span className="compulsory">*</span></label>
+                    <input type="text" className="inputbox" name="zipcode_name" ref={ref_zipcode} onChange={handleChange} defaultValue={address_details["zipcode"]}></input>
+                </div>
+                
+                {isZipCodeInvalid === true ? <div className="alert"><h2>Your zipcode should be 6 digit number only</h2></div> : null}
+                
             </div>
             <div>
-                <button onClick={handleAdd} className="addbutton">Add</button>
+                    <button onClick={handleAdd} className="addbutton">Save</button>
             </div>
         </div>
+        
     );
 }
 

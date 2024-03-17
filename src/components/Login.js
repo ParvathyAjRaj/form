@@ -5,7 +5,7 @@ let login_form = {"username":'',
                     "password":'',
                     "validation":false};
 
-function Login(){
+function Login({mainAlert}){
     const inputUser = useRef();
     const inputPwd = useRef();
     const [username,setUsername] = useState(null);
@@ -15,13 +15,17 @@ function Login(){
 
     function handleUser(event){
         setUsername(inputUser.current.value);
+        setAlertUsername(false);
+        // mainAlert(true);
     }
 
     function handlePwd(){
         setPassword(inputPwd.current.value);
+        setAlertPassword(false);
+        // mainAlert(true);
     }
 
-    function handleAdd(){
+    function handleSave(){
         if (username !== null && username.length >= 4){
             setAlertUsername(false);
             login_form["username"] = username;
@@ -41,25 +45,28 @@ function Login(){
     }
 
     return(
-        <div className="login container">
-            <div className="user">
-                <label>Username <span className="compulsory">*</span></label>
-                <input type="text"  ref={inputUser} onChange={handleUser} className="inputbox" defaultValue={login_form["username"]}></input>
-            </div>
-            <div className="alert">
-                    {alertUsername === true ? <alert>Your username should be atleast 4 letters</alert> : null}
-            </div>
-            <div className="pwd">
-                <label className="label">Password <span className="compulsory">*</span></label>
-                <input type="password" ref={inputPwd} onChange={handlePwd} className="inputbox" defaultValue={login_form["password"]}></input>  
-            </div>
-            <div className="alert">
-                    {alertPassword === true ? <alert>Your password should be atleast 8 letters length [maximum of 25 letters length]</alert> : null}
+        <div className="main">
+            <div className="container" id="login">
+                <p className="user">
+                    <label className="label">Username<span className="compulsory">*</span></label>
+                    <input type="text"  ref={inputUser} onChange={handleUser} className="inputbox" defaultValue={login_form["username"]}></input>
+                </p>
+                
+                {alertUsername === true ? <p className="alert"><alert>Your username should be atleast 4 letters</alert> </p> : null}
+        
+                <p className="pwd">
+                    <label className="label">Password<span className="compulsory">*</span></label>
+                    <input type="password" ref={inputPwd} onChange={handlePwd} className="inputbox" defaultValue={login_form["password"]}></input>  
+                </p>
+                
+                {alertPassword === true ? <p className="alert"><alert>Your password should be atleast 8 letters length [maximum of 25 letters length]</alert> </p>: null}
+                
             </div>
             <div>
-                <button onClick={handleAdd} className="addbutton">Add</button>
+                    <button onClick={handleSave} className="addbutton">Save</button>
             </div>
         </div>
+        
     )
 }
 
